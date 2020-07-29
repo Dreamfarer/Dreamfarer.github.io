@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Dreamfarer.github.io</id>
     <title>无糖乌龙</title>
-    <updated>2020-07-29T09:09:38.374Z</updated>
+    <updated>2020-07-29T09:22:07.138Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Dreamfarer.github.io"/>
     <link rel="self" href="https://Dreamfarer.github.io/atom.xml"/>
@@ -10,6 +10,104 @@
     <logo>https://Dreamfarer.github.io/images/avatar.png</logo>
     <icon>https://Dreamfarer.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 无糖乌龙</rights>
+    <entry>
+        <title type="html"><![CDATA[二分图的建图]]></title>
+        <id>https://Dreamfarer.github.io/post/3sy_28qpe/</id>
+        <link href="https://Dreamfarer.github.io/post/3sy_28qpe/">
+        </link>
+        <updated>2020-07-29T09:13:58.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="闲话">闲话</h1>
+<p>主要收集一些建图比较有特点的题,也具有一定的套路性.见多识广,写题解加深一下印象.</p>
+<h1 id="poj-3041-asteroids">[POJ 3041] Asteroids</h1>
+<p>原题链接:<a href="http://poj.org/problem?id=3041">[POJ 3041] Asteroids</a><br>
+题目大意:有一个<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>∗</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">n*m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.46528em;vertical-align:0em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span></span></span></span>的的格子,每个格子里可能有一个敌人,一共有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span>个敌人.现在有一个武器可以消灭整行或整列的敌人,问你最少要使用多少次这个武器才能消灭所有的敌人.</p>
+<p>数据范围:<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≤</mo><mi>N</mi><mo>≤</mo><mn>500</mn></mrow><annotation encoding="application/x-tex">1 \leq N \leq 500</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.13597em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span><span class="mord">0</span><span class="mord">0</span></span></span></span><br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≤</mo><mi>K</mi><mo>≤</mo><mn>10000</mn></mrow><annotation encoding="application/x-tex">1 \leq K \leq 10000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.13597em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">K</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span></p>
+<h2 id="思路">思路</h2>
+<p>武器是每一行每一列的消灭敌人的,对于一个敌人来说,他如果能被竖着的武器消灭就一定不会再打一个横着的武器,因为这没有意义.如果把整行整列看做是一个点,而一个敌人看做是两个点相连的话,那么整个问题就会变成一个最小顶点覆盖问题.因为要选的就是哪一行哪一列去消灭敌人,其次每个敌人都要消灭,因此就是在这张图上选出最少的点,使每条边都被覆盖.可以验证这是一张二分图,把左部点设置成行的坐标,右部点设置成列的坐标,对列做一个映射把下标增加<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>.之后就可以在这张图上跑最大匹配了,因为对于二分图来说最小顶点覆盖和最大匹配的数量是相等的.</p>
+<p>代码:</p>
+<pre><code class="language-C++">#define _CRT_SECURE_NO_WARNINGS
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+typedef long long ll;
+const int N = 2005,M = 2e5+7,INF = 1 &lt;&lt; 29;
+int edge[M],succ[M],cap[M],ver[N],idx = 1;
+int n,m,s,t,d[N],pre[N];
+ll incf[N],maxflow;
+queue&lt;int&gt; q;
+void add(int u,int v,int w)
+{
+	edge[++idx] = v;
+	cap[idx] = w;
+	succ[idx] = ver[u];
+	ver[u] = idx; 
+	
+	edge[++idx] = u;
+	cap[idx] = 0;
+	succ[idx] = ver[v];
+	ver[v] = idx;
+}
+bool bfs()
+{
+	memset(d,0,sizeof d);
+	while(q.size())	q.pop();
+	q.push(s);d[s] = 1;
+	while(!q.empty())
+	{
+		int u = q.front();q.pop();
+		for(int i = ver[u];i;i = succ[i])
+		{
+			int v = edge[i];
+			if(cap[i] &amp;&amp; !d[v])
+			{
+				q.push(v);
+				d[v] = d[u] + 1;
+				if(v == t)	return 1;
+			}
+		}
+	}
+	return 0;
+}
+int dinic(int u,int flow)
+{
+	if(u == t)	return flow;
+	int rest = flow,k,i;
+	for(int i = ver[u];i &amp;&amp; rest;i = succ[i])
+	{
+		int v = edge[i];
+		if(cap[i] &amp;&amp; d[v] == d[u] + 1)
+		{
+			k = dinic(v,min(rest,cap[i]));
+			if(!k)	d[v] = 0;
+			cap[i] -= k;
+			cap[i ^ 1] += k;
+			rest -= k;
+		}
+	}
+	return flow - rest;
+}
+int main()
+{
+	scanf(&quot;%d%d&quot;,&amp;n,&amp;m);
+	s = 0;t = 2 * n + 2;
+	for(int i = 1;i &lt;= n;++i)	add(s,i,1),add(i + n,t,1);
+	for(int i = 0;i &lt; m;++i)
+	{
+		int x,y;scanf(&quot;%d%d&quot;,&amp;x,&amp;y);
+		add(x,y + n,1);
+	}
+	int flow = 0;
+	while(bfs())	
+		while(flow = dinic(s,INF)) 
+			maxflow += flow;
+	printf(&quot;%lld&quot;,maxflow);
+    return 0;
+}
+
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Educational Codeforces Round 71 A~F题解]]></title>
         <id>https://Dreamfarer.github.io/post/J7094YwpK/</id>
@@ -1837,130 +1935,6 @@ int main()
 	}
 	if(res == 1ll * n * m - k)	puts(&quot;Yes&quot;);
 	else puts(&quot;No&quot;);
-    return 0;
-}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[[luogu 3254] 圆桌问题]]></title>
-        <id>https://Dreamfarer.github.io/post/PfEfo48Gv/</id>
-        <link href="https://Dreamfarer.github.io/post/PfEfo48Gv/">
-        </link>
-        <updated>2020-07-26T02:35:59.000Z</updated>
-        <content type="html"><![CDATA[<p>原题链接:<a href="https://www.luogu.com.cn/problem/P3254">[luogu 3254] 圆桌问题</a><br>
-题目大意:有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span></span></span></span>个单位派出若干个代表参加一场会议,第<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span>个单位派出了<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>r</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">r_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>个人.一共有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>个餐桌,每个餐桌上可以坐<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>c</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">c_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>个人.要求每个桌子上坐的代表来自不同的单位.求出是否存在一种方案使得上条件满足,如果能,输出具体方案.如果不能输出<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>.</p>
-<p>数据范围:<br>
-<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≤</mo><mi>m</mi><mo>≤</mo><mn>150</mn></mrow><annotation encoding="application/x-tex">1 \leq m \leq 150</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord mathdefault">m</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">5</span><span class="mord">0</span></span></span></span><br>
-<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≤</mo><mi>n</mi><mo>≤</mo><mn>270</mn></mrow><annotation encoding="application/x-tex">1 \leq n \leq 270</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">7</span><span class="mord">0</span></span></span></span><br>
-<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≤</mo><msub><mi>r</mi><mi>i</mi></msub><mo separator="true">,</mo><msub><mi>c</mi><mi>i</mi></msub><mo>≤</mo><mn>1</mn><msup><mn>0</mn><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">1 \leq r_i,c_i \leq 10^3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8304100000000001em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span></p>
-<p>先想办法把这个题的图建出来:首先对单位和桌子之间考虑,显然每个单位只能对每个桌子派出一个人,那么单位与桌子之间的连边每个边的容量就应该是设置成<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>.连完之后这张图很显然是一张二分图,原问题的答案就是求这个二分图的多重匹配,这个如果用匈牙利做的话要拆点.因为对每个单位来说,他要派出去<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>r</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">r_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>个人到<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>r</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">r_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>个不同的桌子上去,而匈牙利不能直接说去多次匹配一个点,他得把每个点拆成多个点,再对他做匹配.但是网络流可以不拆点,因为你把左边的所有点都连向一个源点<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span></span></span></span>的话,每个边的流量是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>r</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">r_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>之后,如果走的是一个最大流,那么每条边都应该走到最大,也就是走了<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>r</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">r_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>出去,中间的单位和边的边不储存流量,而且只走一个人,也就是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>的容量.最后就是一个汇点问题,跟源点的建立也是对称的,因为每个桌子最多坐<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>c</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">c_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>个人,那么显然就是每个桌子往汇点连一条容量为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>c</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">c_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>的边.<br>
-整个过程可以这么理解:从每个单位点到每个桌子,肯定是连一条边,这里的整张图一定是一个二分图.其次你得让每个单位来<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>r</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">r_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>个人,每个桌子坐<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>c</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">c_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>个人,这两个条件分别就是源点走单位点,容量是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>r</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">r_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>;而桌子点走汇点,容量是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>c</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">c_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>.假设说最大流跑满了的话,从源点出去的所有流量应该都是跑满的,到达汇点的所有流量应该都是占满了<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>c</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">c_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>的.换句话说如果最大流就是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∑</mo><msub><mi>r</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\sum r_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.00001em;vertical-align:-0.25001em;"></span><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">∑</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>的话,就说明所有的单位里的人都找到一个不同的位置坐.这就是题目判断是否坐满了的条件.也就是说这样处理了之后,新的网络上跑最大流等价于原来的二分图上跑多重匹配,因此是正确的.<br>
-分析到这里,这个题就没什么问题了,不过还要输出方案:先遍历所有的边,找到这条边联通的两个点,如果这两个点不是源点或者汇点的话,就再看反向边的流量是不是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>,如果是的话说明这条边被用了,也就是说找到应该是左部的点<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>u</mi></mrow><annotation encoding="application/x-tex">u</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">u</span></span></span></span>,之后再把另外一点<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>v</mi></mrow><annotation encoding="application/x-tex">v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span></span></span></span>加入到答案集合里.最后一起输出即可.<br>
-不过对于实际建图的时候,我的代码里先把所有的桌子的<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mi>d</mi></mrow><annotation encoding="application/x-tex">id</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">i</span><span class="mord mathdefault">d</span></span></span></span>映射成了<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>j</mi><mo>+</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">j + m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span></span></span></span>所以实际的答案里,他们的<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mi>d</mi></mrow><annotation encoding="application/x-tex">id</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">i</span><span class="mord mathdefault">d</span></span></span></span>还需要重新映射回去,变成<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span></span></span></span>才行,这一点需要注意一下.</p>
-<p>代码:</p>
-<pre><code class="language-C++">#define _CRT_SECURE_NO_WARNINGS
-#include &lt;bits/stdc++.h&gt;
-using namespace std;
-typedef long long ll;
-const int N = 500,M = 1e6+7,INF = 1 &lt;&lt; 29;
-int edge[M],succ[M],cap[M],ver[N],idx = 1;
-int n,m,s,t,d[N],pre[N];
-ll incf[N],maxflow;
-queue&lt;int&gt; q;
-vector&lt;int&gt; res[N];
-void add(int u,int v,int w)
-{
-	edge[++idx] = v;
-	cap[idx] = w;
-	succ[idx] = ver[u];
-	ver[u] = idx; 
-	
-	edge[++idx] = u;
-	cap[idx] = 0;
-	succ[idx] = ver[v];
-	ver[v] = idx;
-}
-bool bfs()
-{
-	memset(d,0,sizeof d);
-	while(q.size())	q.pop();
-	q.push(s);d[s] = 1;
-	while(!q.empty())
-	{
-		int u = q.front();q.pop();
-		for(int i = ver[u];i;i = succ[i])
-		{
-			int v = edge[i];
-			if(cap[i] &amp;&amp; !d[v])
-			{
-				q.push(v);
-				d[v] = d[u] + 1;
-				if(v == t)	return 1;
-			}
-		}
-	}
-	return 0;
-}
-int dinic(int u,int flow)
-{
-	if(u == t)	return flow;
-	int rest = flow,k,i;
-	for(int i = ver[u];i &amp;&amp; rest;i = succ[i])
-	{
-		int v = edge[i];
-		if(cap[i] &amp;&amp; d[v] == d[u] + 1)
-		{
-			k = dinic(v,min(rest,cap[i]));
-			if(!k)	d[v] = 0;
-			cap[i] -= k;
-			cap[i ^ 1] += k;
-			rest -= k;
-		}
-	}
-	return flow - rest;
-}
-int main()
-{
-	scanf(&quot;%d%d&quot;,&amp;m,&amp;n);
-	s = 0;t = n + m + 2;
-	int sump = 0;
-	for(int i = 1;i &lt;= m;++i)
-	{
-		int x;scanf(&quot;%d&quot;,&amp;x);
-		sump += x;
-		add(s,i,x);
-	}
-	for(int i = 1;i &lt;= m;++i)
-		for(int j = 1;j &lt;= n;++j)
-			add(i,j + m,1);
-	for(int i = 1;i &lt;= n;++i)
-	{
-		int x;scanf(&quot;%d&quot;,&amp;x);
-		add(i + m,t,x);
-	}
-	int flow = 0;
-	while(bfs())	
-		while(flow = dinic(s,INF)) 
-			maxflow += flow;
-    if(maxflow != sump)	printf(&quot;0&quot;);
-    else
-    {
-    	printf(&quot;1\n&quot;);
-		for(int i = 2;i &lt;= idx;i += 2)
-		{
-			int u = edge[i ^ 1],v = edge[i];
-			if(u == s || u == t || v == s || v == t)	continue;
-			if(cap[i ^ 1])
-				res[u].push_back(v - m);
-		}
-		for(int i = 1;i &lt;= m;++i)
-		{
-			for(auto&amp; j : res[i])
-				printf(&quot;%d &quot;,j);
-			puts(&quot;&quot;);
-		}
-    }
     return 0;
 }
 </code></pre>

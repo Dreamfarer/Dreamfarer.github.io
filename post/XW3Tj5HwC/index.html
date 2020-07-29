@@ -9,7 +9,7 @@
 <meta name="description" content="O(LIFE)">
 <meta name="theme-color" content="#000">
 <title>博弈论 2[SG函数] | 无糖乌龙</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1596013763645">
+<link rel="shortcut icon" href="/favicon.ico?v=1596014516215">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -240,7 +240,7 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">47</span>
+        <span class="site-item-stat-count">48</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
@@ -978,6 +978,101 @@ int main()
       <hr>
     </div>
     <div class="result" id="result">
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://Dreamfarer.github.io/post/3sy_28qpe/"" data-c="
+          &lt;h1 id=&#34;闲话&#34;&gt;闲话&lt;/h1&gt;
+&lt;p&gt;主要收集一些建图比较有特点的题,也具有一定的套路性.见多识广,写题解加深一下印象.&lt;/p&gt;
+&lt;h1 id=&#34;poj-3041-asteroids&#34;&gt;[POJ 3041] Asteroids&lt;/h1&gt;
+&lt;p&gt;原题链接:&lt;a href=&#34;http://poj.org/problem?id=3041&#34;&gt;[POJ 3041] Asteroids&lt;/a&gt;&lt;br&gt;
+题目大意:有一个&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;∗&lt;/mo&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;n*m&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.46528em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;∗&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.43056em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;m&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;的的格子,每个格子里可能有一个敌人,一共有&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;k&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.69444em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.03148em;&#34;&gt;k&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;个敌人.现在有一个武器可以消灭整行或整列的敌人,问你最少要使用多少次这个武器才能消灭所有的敌人.&lt;/p&gt;
+&lt;p&gt;数据范围:&lt;br&gt;
+&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mn&gt;500&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;1 \leq N \leq 500&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.78041em;vertical-align:-0.13597em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;≤&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.8193em;vertical-align:-0.13597em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.10903em;&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;≤&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.64444em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;
+&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mi&gt;K&lt;/mi&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mn&gt;10000&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;1 \leq K \leq 10000&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.78041em;vertical-align:-0.13597em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;≤&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.8193em;vertical-align:-0.13597em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.07153em;&#34;&gt;K&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;≤&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.64444em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&#34;思路&#34;&gt;思路&lt;/h2&gt;
+&lt;p&gt;武器是每一行每一列的消灭敌人的,对于一个敌人来说,他如果能被竖着的武器消灭就一定不会再打一个横着的武器,因为这没有意义.如果把整行整列看做是一个点,而一个敌人看做是两个点相连的话,那么整个问题就会变成一个最小顶点覆盖问题.因为要选的就是哪一行哪一列去消灭敌人,其次每个敌人都要消灭,因此就是在这张图上选出最少的点,使每条边都被覆盖.可以验证这是一张二分图,把左部点设置成行的坐标,右部点设置成列的坐标,对列做一个映射把下标增加&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;n&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.43056em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;n&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;.之后就可以在这张图上跑最大匹配了,因为对于二分图来说最小顶点覆盖和最大匹配的数量是相等的.&lt;/p&gt;
+&lt;p&gt;代码:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-C++&#34;&gt;#define _CRT_SECURE_NO_WARNINGS
+#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+const int N = 2005,M = 2e5+7,INF = 1 &amp;lt;&amp;lt; 29;
+int edge[M],succ[M],cap[M],ver[N],idx = 1;
+int n,m,s,t,d[N],pre[N];
+ll incf[N],maxflow;
+queue&amp;lt;int&amp;gt; q;
+void add(int u,int v,int w)
+{
+	edge[++idx] = v;
+	cap[idx] = w;
+	succ[idx] = ver[u];
+	ver[u] = idx; 
+	
+	edge[++idx] = u;
+	cap[idx] = 0;
+	succ[idx] = ver[v];
+	ver[v] = idx;
+}
+bool bfs()
+{
+	memset(d,0,sizeof d);
+	while(q.size())	q.pop();
+	q.push(s);d[s] = 1;
+	while(!q.empty())
+	{
+		int u = q.front();q.pop();
+		for(int i = ver[u];i;i = succ[i])
+		{
+			int v = edge[i];
+			if(cap[i] &amp;amp;&amp;amp; !d[v])
+			{
+				q.push(v);
+				d[v] = d[u] + 1;
+				if(v == t)	return 1;
+			}
+		}
+	}
+	return 0;
+}
+int dinic(int u,int flow)
+{
+	if(u == t)	return flow;
+	int rest = flow,k,i;
+	for(int i = ver[u];i &amp;amp;&amp;amp; rest;i = succ[i])
+	{
+		int v = edge[i];
+		if(cap[i] &amp;amp;&amp;amp; d[v] == d[u] + 1)
+		{
+			k = dinic(v,min(rest,cap[i]));
+			if(!k)	d[v] = 0;
+			cap[i] -= k;
+			cap[i ^ 1] += k;
+			rest -= k;
+		}
+	}
+	return flow - rest;
+}
+int main()
+{
+	scanf(&amp;quot;%d%d&amp;quot;,&amp;amp;n,&amp;amp;m);
+	s = 0;t = 2 * n + 2;
+	for(int i = 1;i &amp;lt;= n;++i)	add(s,i,1),add(i + n,t,1);
+	for(int i = 0;i &amp;lt; m;++i)
+	{
+		int x,y;scanf(&amp;quot;%d%d&amp;quot;,&amp;amp;x,&amp;amp;y);
+		add(x,y + n,1);
+	}
+	int flow = 0;
+	while(bfs())	
+		while(flow = dinic(s,INF)) 
+			maxflow += flow;
+	printf(&amp;quot;%lld&amp;quot;,maxflow);
+    return 0;
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+">二分图的建图</a>
+      </div>
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://Dreamfarer.github.io/post/J7094YwpK/"" data-c="
