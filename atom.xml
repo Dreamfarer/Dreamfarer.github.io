@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Dreamfarer.github.io</id>
     <title>无糖乌龙</title>
-    <updated>2020-07-29T14:22:30.884Z</updated>
+    <updated>2020-07-30T01:40:27.574Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Dreamfarer.github.io"/>
     <link rel="self" href="https://Dreamfarer.github.io/atom.xml"/>
@@ -178,7 +178,7 @@ signed main()
 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≤</mo><mi>K</mi><mo>≤</mo><mn>10000</mn></mrow><annotation encoding="application/x-tex">1 \leq K \leq 10000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.13597em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">K</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span></p>
 <h2 id="思路">思路</h2>
 <p>武器是每一行每一列的消灭敌人的,对于一个敌人来说,他如果能被竖着的武器消灭就一定不会再打一个横着的武器,因为这没有意义.如果把整行整列看做是一个点,而一个敌人看做是两个点相连的话,那么整个问题就会变成一个最小顶点覆盖问题.因为要选的就是哪一行哪一列去消灭敌人,其次每个敌人都要消灭,因此就是在这张图上选出最少的点,使每条边都被覆盖.可以验证这是一张二分图,把左部点设置成行的坐标,右部点设置成列的坐标,对列做一个映射把下标增加<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>.之后就可以在这张图上跑最大匹配了,因为对于二分图来说最小顶点覆盖和最大匹配的数量是相等的.</p>
-<p>代码:</p>
+<h2 id="代码">代码</h2>
 <pre><code class="language-C++">#define _CRT_SECURE_NO_WARNINGS
 #include &lt;bits/stdc++.h&gt;
 using namespace std;
@@ -256,7 +256,105 @@ int main()
 	printf(&quot;%lld&quot;,maxflow);
     return 0;
 }
-
+</code></pre>
+<h1 id="poj-3281-dining">[POJ 3281] Dining</h1>
+<p>题目大意:一共有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>个人,每个人有自己喜欢的食物和饮料.而每种食物和饮料最多只能分配给一个人.问最多有多少个人可以同时拿到自己喜欢的食物和饮料.输出数量即可.</p>
+<p>数据范围:<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≤</mo><mi>n</mi><mo>≤</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">1 \leq n \leq 100</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span></span></span></span><br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≤</mo><mi>F</mi><mo separator="true">,</mo><mi>D</mi><mo>≤</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">1 \leq F,D \leq 100</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span></span></span></span></p>
+<h2 id="思路-2">思路</h2>
+<p>假设说没有饮料,那么这个问题就非常的普通,就是一个人与食物的最大匹配问题.但是现在多加了一个饮料,这就导致问题看起来变的难缠了.这个题的关键就是转换,把一个人与两个匹配变成两个人跟两个匹配.<br>
+首先把所有人拆点,每个人分两个,左边的连食物,右边的连饮料,拆完点之后的人之间自己与自己相连.如下图<img src="https://Dreamfarer.github.io/post-images/1596072116893.png" alt="" loading="lazy"><br>
+之后在两边加一个源点和汇点.那么这张图上的一条流就是一个人匹配两个食物的形式.把所有的容量都设置成<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>,就保证了所有食物和饮料都只使用了一次.最后在原图上求解最大匹配等价于在新图上求解最大流.套模板即可.</p>
+<h2 id="代码-2">代码</h2>
+<pre><code class="language-C++">#define _CRT_SECURE_NO_WARNINGS
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+typedef long long ll;
+const int N = 405,M = 1e6+7,INF = 1 &lt;&lt; 29;
+int edge[M],succ[M],cap[M],ver[N],idx = 1;
+int n,m,s,t,d[N],pre[N],F,D;
+ll incf[N],maxflow;
+queue&lt;int&gt; q;
+void add(int u,int v,int w)
+{
+	edge[++idx] = v;
+	cap[idx] = w;
+	succ[idx] = ver[u];
+	ver[u] = idx; 
+	
+	edge[++idx] = u;
+	cap[idx] = 0;
+	succ[idx] = ver[v];
+	ver[v] = idx;
+}
+bool bfs()
+{
+	memset(d,0,sizeof d);
+	while(q.size())	q.pop();
+	q.push(s);d[s] = 1;
+	while(!q.empty())
+	{
+		int u = q.front();q.pop();
+		for(int i = ver[u];i;i = succ[i])
+		{
+			int v = edge[i];
+			if(cap[i] &amp;&amp; !d[v])
+			{
+				q.push(v);
+				d[v] = d[u] + 1;
+				if(v == t)	return 1;
+			}
+		}
+	}
+	return 0;
+}
+int dinic(int u,int flow)
+{
+	if(u == t)	return flow;
+	int rest = flow,k,i;
+	for(int i = ver[u];i &amp;&amp; rest;i = succ[i])
+	{
+		int v = edge[i];
+		if(cap[i] &amp;&amp; d[v] == d[u] + 1)
+		{
+			k = dinic(v,min(rest,cap[i]));
+			if(!k)	d[v] = 0;
+			cap[i] -= k;
+			cap[i ^ 1] += k;
+			rest -= k;
+		}
+	}
+	return flow - rest;
+}
+int main()
+{
+	scanf(&quot;%d%d%d&quot;,&amp;n,&amp;F,&amp;D);
+	s = 0,t = F + 2 * n + D + 1;
+	for(int i = 1;i &lt;= F;++i)	add(s,i,1);
+	for(int i = 1;i &lt;= n;++i)
+	{
+		int _f,_d;scanf(&quot;%d%d&quot;,&amp;_f,&amp;_d);
+		while(_f--)
+		{
+			int x;scanf(&quot;%d&quot;,&amp;x);
+			add(x,i + F,1);
+		}
+		while(_d--)
+		{
+			int x;scanf(&quot;%d&quot;,&amp;x);
+			add(i + n + F,x + F + 2 * n,1);
+		}
+		add(i + F,i + n + F,1);
+	}
+	for(int i = 1;i &lt;= D;++i)	add(i + F + 2 * n,t,1);
+	int flow = 0;
+	while(bfs())	
+		while(flow = dinic(s,INF)) 
+			maxflow += flow;
+	printf(&quot;%lld&quot;,maxflow);
+    return 0;
+}
 </code></pre>
 ]]></content>
     </entry>
