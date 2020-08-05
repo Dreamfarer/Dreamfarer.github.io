@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Dreamfarer.github.io</id>
     <title>无糖乌龙</title>
-    <updated>2020-08-04T13:54:07.271Z</updated>
+    <updated>2020-08-05T01:35:32.901Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Dreamfarer.github.io"/>
     <link rel="self" href="https://Dreamfarer.github.io/atom.xml"/>
@@ -10,6 +10,86 @@
     <logo>https://Dreamfarer.github.io/images/avatar.png</logo>
     <icon>https://Dreamfarer.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 无糖乌龙</rights>
+    <entry>
+        <title type="html"><![CDATA[[POJ 2686] Traveling by Stagecoach]]></title>
+        <id>https://Dreamfarer.github.io/post/WgNXnnkRR/</id>
+        <link href="https://Dreamfarer.github.io/post/WgNXnnkRR/">
+        </link>
+        <updated>2020-08-05T01:12:26.000Z</updated>
+        <content type="html"><![CDATA[<p>原题链接:<a href="http://poj.org/problem?id=2686">[POJ 2686] Traveling by Stagecoach</a><br>
+原题大意:有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span></span></span></span>个城市,<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>张票.给定了起点和终点,以及两个城市之间的距离,假如两个城市之间是联通的,那么在使用一张车票的时候,会有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>t</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">t_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76508em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>只马的车载你到另一个城市,需要的时间是距离除马的数量.每张车票只能用一次现求从起点到终点最少时间是多少.<br>
+数据范围:<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≤</mo><mi>n</mi><mo>≤</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">1 \leq n \leq 8</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">8</span></span></span></span><br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mo>≤</mo><mi>m</mi><mo>≤</mo><mn>30</mn></mrow><annotation encoding="application/x-tex">2 \leq m \leq 30</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord mathdefault">m</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span><span class="mord">0</span></span></span></span></p>
+<h2 id="思路">思路</h2>
+<p>由于数据量很小,在这种情况下考虑到指数级的算法可能的就是搜索和状压<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi><mi>P</mi></mrow><annotation encoding="application/x-tex">DP</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span></span></span></span>.这个题如果去掉车票的限制就是一个普通的最短路问题.如果要加入这个车票的限制,则在递推的时候也要把整个车票的状态全考虑进去,因此这就比较明显是一个状态压缩的形式:把所有的车票用二进制数压缩,<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>表示用了,将整个状态丢进去考虑再求最短路即可.<br>
+不过这题还有一个性质:可以发现从起点一直往外拓展的话,整个车票集合是只增不减的,也就是说如果把状态看成点,转移看成边,那么整个图是一个<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi><mi>A</mi><mi>G</mi></mrow><annotation encoding="application/x-tex">DAG</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="mord mathdefault">A</span><span class="mord mathdefault">G</span></span></span></span>,即可以直接<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi><mi>P</mi></mrow><annotation encoding="application/x-tex">DP</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span></span></span></span>递推得到最后的答案.</p>
+<h2 id="状态设计">状态设计</h2>
+<p>状态:$$f[S][v]<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">表</mi><mi mathvariant="normal">示</mi><mi mathvariant="normal">当</mi><mi mathvariant="normal">前</mi><mi mathvariant="normal">手</mi><mi mathvariant="normal">上</mi><mi mathvariant="normal">的</mi><mi mathvariant="normal">车</mi><mi mathvariant="normal">票</mi><mi mathvariant="normal">集</mi><mi mathvariant="normal">合</mi><mi mathvariant="normal">是</mi></mrow><annotation encoding="application/x-tex">表示当前手上的车票集合是</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">表</span><span class="mord cjk_fallback">示</span><span class="mord cjk_fallback">当</span><span class="mord cjk_fallback">前</span><span class="mord cjk_fallback">手</span><span class="mord cjk_fallback">上</span><span class="mord cjk_fallback">的</span><span class="mord cjk_fallback">车</span><span class="mord cjk_fallback">票</span><span class="mord cjk_fallback">集</span><span class="mord cjk_fallback">合</span><span class="mord cjk_fallback">是</span></span></span></span>S<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo separator="true">,</mo><mi mathvariant="normal">人</mi><mi mathvariant="normal">在</mi></mrow><annotation encoding="application/x-tex">,人在</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.3em;vertical-align:-0.19444em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord cjk_fallback">人</span><span class="mord cjk_fallback">在</span></span></span></span>v$城市时最少要消耗多少时间,集合里如果是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>表示已经用了,<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>表示没有用.<br>
+入口:<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>[</mo><mn>0</mn><mo>]</mo><mo>[</mo><mi>a</mi><mo>]</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">f[0][a]=0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">[</span><span class="mord">0</span><span class="mclose">]</span><span class="mopen">[</span><span class="mord mathdefault">a</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>一开始在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span></span></span></span>城市,自然为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>.由于要求最小值,因此其他为正无穷.<br>
+出口:<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mi>i</mi><mi>n</mi><mrow><mi>f</mi><mo>[</mo><mtext> </mtext><mo>]</mo><mo>[</mo><mi>b</mi><mo>]</mo></mrow></mrow><annotation encoding="application/x-tex">min{f[~][b]}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">m</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">[</span><span class="mspace nobreak"> </span><span class="mclose">]</span><span class="mopen">[</span><span class="mord mathdefault">b</span><span class="mclose">]</span></span></span></span></span>其中~表示任意的值,即只要能到<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>v</mi></mrow><annotation encoding="application/x-tex">v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span></span></span></span>即可.<br>
+转移:首先遍历起点<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>v</mi></mrow><annotation encoding="application/x-tex">v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span></span></span></span>,再遍历集合里每个元素,看哪个车票还没用,记为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span>.再枚举谁是下一个到达的城市<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>u</mi></mrow><annotation encoding="application/x-tex">u</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">u</span></span></span></span>.这个过程就是从<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>v</mi></mrow><annotation encoding="application/x-tex">v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span></span></span></span>到<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>u</mi></mrow><annotation encoding="application/x-tex">u</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">u</span></span></span></span>使用<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span>号车票.则实际产生的代价就是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi>i</mi><mi>s</mi><mi>t</mi><mo>[</mo><mi>v</mi><mo>]</mo><mo>[</mo><mi>u</mi><mo>]</mo><mi mathvariant="normal">/</mi><mi>t</mi><mo>[</mo><mi>i</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">dist[v][u] / t[i]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">d</span><span class="mord mathdefault">i</span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="mclose">]</span><span class="mopen">[</span><span class="mord mathdefault">u</span><span class="mclose">]</span><span class="mord">/</span><span class="mord mathdefault">t</span><span class="mopen">[</span><span class="mord mathdefault">i</span><span class="mclose">]</span></span></span></span>.而后一个状态,也即是用掉了<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span>车票的状态记作<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>S</mi><mo mathvariant="normal">′</mo></msup><mo>=</mo><mi>S</mi><mi mathvariant="normal">∣</mi><mo>(</mo><mn>1</mn><mo>&lt;</mo><mo>&lt;</mo><mi>i</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">S&#x27; = S | (1 &lt;&lt; i)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.751892em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord">∣</span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span></span><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">i</span><span class="mclose">)</span></span></span></span>.表达式为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>[</mo><msup><mi>S</mi><mo mathvariant="normal">′</mo></msup><mo>]</mo><mo>[</mo><mi>u</mi><mo>]</mo><mo>=</mo><mi>m</mi><mi>i</mi><mi>n</mi><mo>(</mo><mi>f</mi><mo>[</mo><msup><mi>S</mi><mo mathvariant="normal">′</mo></msup><mo>]</mo><mo>[</mo><mi>u</mi><mo>]</mo><mo separator="true">,</mo><mi>f</mi><mo>[</mo><mi>S</mi><mo>]</mo><mo>[</mo><mi>v</mi><mo>]</mo><mo>+</mo><mi>d</mi><mi>i</mi><mi>s</mi><mi>t</mi><mo>[</mo><mi>v</mi><mo>]</mo><mo>[</mo><mi>u</mi><mo>]</mo><mi mathvariant="normal">/</mi><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f[S&#x27;][u] = min(f[S&#x27;][u],f[S][v] + dist[v][u] / t)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.001892em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">[</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mclose">]</span><span class="mopen">[</span><span class="mord mathdefault">u</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.001892em;vertical-align:-0.25em;"></span><span class="mord mathdefault">m</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">[</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mclose">]</span><span class="mopen">[</span><span class="mord mathdefault">u</span><span class="mclose">]</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mclose">]</span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">d</span><span class="mord mathdefault">i</span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="mclose">]</span><span class="mopen">[</span><span class="mord mathdefault">u</span><span class="mclose">]</span><span class="mord">/</span><span class="mord mathdefault">t</span><span class="mclose">)</span></span></span></span></p>
+<h2 id="代码">代码</h2>
+<pre><code class="language-C++">#include &lt;cstdio&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+#include &lt;cstring&gt;
+using namespace std;
+typedef long long ll;
+
+int n,m,p,S,T;
+const int N = 100,M = 10000,_N = 1 &lt;&lt; 8;
+const double INF = 1e12;
+int dist[N][N];
+double f[_N][N];
+int t[N];
+int main()
+{
+	while((scanf(&quot;%d%d%d%d%d&quot;,&amp;n,&amp;m,&amp;p,&amp;S,&amp;T) == 5))
+	{
+		if(!n &amp;&amp; !m &amp;&amp; !p &amp;&amp; !S &amp;&amp; !T)	break;
+		--S;--T;
+		for(int i = 0;i &lt; n;++i)	scanf(&quot;%d&quot;,&amp;t[i]);
+		for(int i = 0;i &lt; 1 &lt;&lt; n;++i)	fill(f[i],f[i] + m,INF);		
+		for(int i = 0;i &lt; m;++i)	fill(dist[i],dist[i] + m,-1);
+		for(int i = 0;i &lt; p;++i)
+		{
+			int u,v,w;scanf(&quot;%d%d%d&quot;,&amp;u,&amp;v,&amp;w);
+			--u;--v;
+			dist[u][v] = dist[v][u] = w;
+		}
+		f[0][S] = 0;
+		double res = INF;
+		for(int state = 0;state &lt; 1 &lt;&lt; n;++state)
+		{
+			for(int v = 0;v &lt; m;++v)
+			{
+				for(int i = 0;i &lt; n;++i)
+				{
+					if(!(state &gt;&gt; i &amp; 1))
+					{
+						for(int u = 0;u &lt; m;++u)
+						{
+							if(dist[v][u] &gt;= 0)
+							{
+								double rc = (double)dist[v][u] / t[i];
+								int _state = state | (1 &lt;&lt; i);
+								f[_state][u] = min(f[_state][u],f[state][v] + rc);
+							}
+						}
+					}
+				}
+			}
+			res = min(res,f[state][T]);
+		}
+		if(res == INF)	printf(&quot;Impossible\n&quot;);
+		else printf(&quot;%.3lf\n&quot;,res);
+	}
+    return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Codeforces Round #585 Div2 A~E题解]]></title>
         <id>https://Dreamfarer.github.io/post/CPJQG7PUL/</id>
@@ -1600,119 +1680,6 @@ int main()
 			}
 		}
     }
-    return 0;
-}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[[POJ 3422] Kaka's Matrix Travels]]></title>
-        <id>https://Dreamfarer.github.io/post/rfk8LPahe/</id>
-        <link href="https://Dreamfarer.github.io/post/rfk8LPahe/">
-        </link>
-        <updated>2020-07-28T22:27:29.000Z</updated>
-        <content type="html"><![CDATA[<p>原题链接:<a href="http://poj.org/problem?id=3422">[POJ 3422] Kaka's Matrix Travels</a></p>
-<h1 id="闲话">闲话</h1>
-<p>本题是一道比较经典的费用流问题,因此先来介绍一下什么是费用流.</p>
-<h1 id="费用流">费用流</h1>
-<p>在给定流网络的前提下,还要引入一个单位流量花费的概念,即每有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>单位的流量流过就要支付<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">c</span></span></span></span>的代价.在满足是最大流的前提下求最大花费或最小花费的模型分别称为最大费用最大流和最小费用最大流.这里一定要注意定义是先满足最大流的性质,然后再谈花费的问题.二分图带权最大匹配可以把每条边的权值看做是单位费用,进而在图上跑最大费用最大流就可以解决问题.</p>
-<h2 id="ek增广路算法">EK增广路算法</h2>
-<p>在EK求解最大流的基础上,把寻找增广路的<code>BFS</code>换成<code>SPFA</code>即可在求得最大流的前提下,顺便使花费最大/最小.唯一要注意的一点是,在残量网络中反向容量一开始为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>.但是反向边的单位花费应该设置成相反数.<br>
-这一点可能搞混.<br>
-那为什么要用<code>SPFA</code>呢,因为维护的残量网络上是存在负权边的,不能用<code>Dijkstra</code>.不过好像也有这种<code>Dijkstra</code>求费用流的方法,过段时间把这里填上.</p>
-<h1 id="poj-3422-kakas-matrix-travels">[POJ 3422] Kaka's Matrix Travels</h1>
-<p>题目大意:给定一个<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>∗</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">n*n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.46528em;vertical-align:0em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>的格子.每个格子里有一个整数,现要求从左上角移动到右下角,每次可以往右边或者下面移动,在经过一个格子之后就会取走里面的整数,之后再经过就没有了,要求找出<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span>条路径,使取得的和最大.</p>
-<h2 id="思路">思路</h2>
-<p>费用流模型的一个特点就会带限制的使权值最优.如果没有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span>次路线这个条件,那么整个过程应该就是在图上找一个最长路,这个显然用<code>SPFA</code>就可以做出来.考虑怎么求<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span>条路径和建图.</p>
-<h3 id="建图">建图</h3>
-<p>因为这张图上是点权,先拆点,把所有的点都拆成一个入点和一个出点.入点的下标还是原来在矩形中的映射一下,而出点就加<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>n</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">n^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>即可.因此源点即是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>,而汇点是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mo>∗</mo><msup><mi>n</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">2*n^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>.<br>
-对于图上每一个点来说,在他自身的入点和出点之间有一条有向边,容量为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>,费用为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">c</span></span></span></span>.表示过来的第一次可以有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">c</span></span></span></span>的费用.而在这两个点之间再连一条容量为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">k-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>,费用为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>的边,表示之后再来的路径是没有数给你取的.如果要反悔,很简单,你只能走那条费用为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">-c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord mathdefault">c</span></span></span></span>的路,把权值退回来再说,这样就保证了正确性.其次对于往右和往下的边,容量都为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span>,费用为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>,因为你在图上移动本来就不消耗什么.这里是前一个的出点走到后一个的入点,注意一下关系就行.</p>
-<h3 id="是否等价">是否等价</h3>
-<p>因为起点的入点和出点之间的容量为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span>,所以往整张图流的容量不会多于<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span>.在求解成功得到最大流的前提下,必然是恰好得到了<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span>条路径的.其次费用流是保证了最大流再保证费用的,所以恰好找到<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span>条路径的条件会被优先满足,因此正确.</p>
-<h2 id="代码">代码</h2>
-<p>注意费用流里的权是单位权,每流一个单位就有一个单位的权,要特别注意这一点,不然答案会算歪.</p>
-<pre><code class="language-C++">#define _CRT_SECURE_NO_WARNINGS
-#include &lt;bits/stdc++.h&gt;
-using namespace std;
-const int N = 5010, M = 200010,INF = 1 &lt;&lt; 30;
-int edge[M],succ[M],cap[M],ver[N],idx = 1;
-int n,m,s,t,d[N],pre[N],cost[M],st[N],dist[N];
-int incf[N],maxflow,res;
-inline int link(int x,int y,int k)
-{
-	return (x - 1) * n + y + k * n * n;
-}
-void add(int u,int v,int w,int c)
-{
-	edge[++idx] = v;cap[idx] = w;cost[idx] = c;
-	succ[idx] = ver[u];ver[u] = idx; 
-	
-	edge[++idx] = u;cap[idx] = 0;cost[idx] = -c;
-	succ[idx] = ver[v];ver[v] = idx;
-}
-void update()
-{
-	int x = t;
-	while(x != s)
-	{
-		int i = pre[x];
-		cap[i] -= incf[t];
-		cap[i ^ 1] += incf[t];
-		x = edge[i ^ 1];
-	}
-	maxflow += incf[t];
-	res += dist[t] * incf[t];
-}
-
-bool spfa()
-{
-	queue&lt;int&gt; q;
-	memset(st,0,sizeof st);
-	memset(dist,0xcf,sizeof dist);
-	q.push(s);st[s] = 1;dist[s] = 0;
-	incf[s] = INF;
-	while(!q.empty())
-	{
-		int u = q.front();q.pop();st[u] = 0;
-		for(int i = ver[u];i;i = succ[i])
-		{
-			int j = cap[i];
-			if(j)
-			{
-				int v = edge[i];
-				if(dist[v] &lt; dist[u] + cost[i])
-				{
-					dist[v] = dist[u] + cost[i];
-					incf[v] = min(incf[u],cap[i]);
-					pre[v] = i;
-					if(!st[v])
-					{
-						st[v] = 1;
-						q.push(v);
-					}
-				}
-			}
-		}
-	}
-	if(dist[t] == 0xcfcfcfcf)	return 0;
-	return 1;
-}
-
-int main()
-{
-	scanf(&quot;%d%d&quot;,&amp;n,&amp;m);
-	s = 1;t = 2 * n * n;
-	for(int i = 1;i &lt;= n;++i)
-		for(int j = 1;j &lt;= n;++j)
-		{
-			int c;scanf(&quot;%d&quot;,&amp;c);
-			add(link(i,j,0),link(i,j,1),1,c);
-			add(link(i,j,0),link(i,j,1),m - 1,0);
-			if(i &lt; n)	add(link(i,j,1),link(i + 1,j,0),m,0);
-			if(j &lt; n)	add(link(i,j,1),link(i,j + 1,0),m,0);
-		}
-	while(spfa())	update();
-	printf(&quot;%d&quot;,res);
     return 0;
 }
 </code></pre>
