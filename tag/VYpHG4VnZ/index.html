@@ -9,7 +9,7 @@
 <meta name="description" content="O(LIFE)">
 <meta name="theme-color" content="#000">
 <title>无糖乌龙</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1596796666955">
+<link rel="shortcut icon" href="/favicon.ico?v=1596855668799">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -223,7 +223,7 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">60</span>
+        <span class="site-item-stat-count">61</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
@@ -281,6 +281,10 @@
           <small class="language" data-lan="tag">标签</small>
         </h2>
       </div>
+      
+      
+      
+      
       
       
       
@@ -842,6 +846,200 @@
     <div class="result" id="result">
       
       <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://Dreamfarer.github.io/post/-tOllc3OC/"" data-c="
+          &lt;p&gt;本场链接:&lt;a href=&#34;https://codeforces.ml/contest/1393&#34;&gt;Codeforces Round #662 Div2&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;闲话&#34;&gt;闲话&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;傻逼&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&#34;a-rainbow-dash-fluttershy-and-chess-coloring&#34;&gt;A. Rainbow Dash, Fluttershy and Chess Coloring&lt;/h1&gt;
+&lt;p&gt;傻逼题面:两个玩家分别填色.初始是一个&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;∗&lt;/mo&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;n*m&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.46528em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;∗&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.43056em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;m&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;的棋盘,第一次只能往边缘相邻的位置上填色.两个人的颜色不同,从第二轮开始,每个人可以往之前填过的不同颜色的旁边位置填色.每个回合可以填无限次,问填满整个棋盘最少要几轮游戏.&lt;/p&gt;
+&lt;h2 id=&#34;思路&#34;&gt;思路&lt;/h2&gt;
+&lt;p&gt;直接模拟,发现规律是&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;/&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;n/2+1&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.64444em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&#34;代码&#34;&gt;代码&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-C++&#34;&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+
+int main()
+{
+    int T;scanf(&amp;quot;%d&amp;quot;,&amp;amp;T);
+    while(T--)
+    {
+		int n;scanf(&amp;quot;%d&amp;quot;,&amp;amp;n);
+		printf(&amp;quot;%d\n&amp;quot;,n / 2 + 1);
+    }
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;b-applejack-and-storages&#34;&gt;B. Applejack and Storages&lt;/h1&gt;
+&lt;p&gt;傻逼题面:一开始有&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;n&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.43056em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;n&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;个木板给定他们的长度.之后有&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;q&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;q&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.625em;vertical-align:-0.19444em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.03588em;&#34;&gt;q&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;个修改操作,每个修改操作要么是增加一个长度为&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;x&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.43056em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;x&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;的模板到可选序列里,要么是删掉一个.保证删掉的一定有.对于每个修改,再修改完之后,问是否能用手上的木板做出一个正方形和一个长方形(正方形也算长方形).输出是否.&lt;/p&gt;
+&lt;p&gt;数据范围:&lt;br&gt;
+&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;msup&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;/msup&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;1 \leq n \leq 10^5&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.78041em;vertical-align:-0.13597em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;≤&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.7719400000000001em;vertical-align:-0.13597em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;≤&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.8141079999999999em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.8141079999999999em;&#34;&gt;&lt;span style=&#34;top:-3.063em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;5&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;
+&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mi&gt;q&lt;/mi&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;msup&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;/msup&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;1 \leq q \leq 10^5&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.78041em;vertical-align:-0.13597em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;≤&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.8304100000000001em;vertical-align:-0.19444em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.03588em;&#34;&gt;q&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;≤&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.8141079999999999em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.8141079999999999em;&#34;&gt;&lt;span style=&#34;top:-3.063em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;5&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&#34;思路-2&#34;&gt;思路&lt;/h2&gt;
+&lt;p&gt;显然直接维护数量,分别算一下满足&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mn&gt;6&lt;/mn&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mn&gt;8&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;2,4,6,8&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.8388800000000001em;vertical-align:-0.19444em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;8&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;的个数各有多少个,对于每个数量下不包含.每个修改都单独处理计算出是否会导致数量的变化,最后直接判是否会有足够的板子搞出两个正方形或一个正方形与一个长方形即可.&lt;br&gt;
+如果用数组,且空间没开到&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;∗&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;msup&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;/msup&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;2*10^5&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.64444em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;∗&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.8141079999999999em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.8141079999999999em;&#34;&gt;&lt;span style=&#34;top:-3.063em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;5&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;会导致FST.傻逼.&lt;/p&gt;
+&lt;h2 id=&#34;代码-2&#34;&gt;代码&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-C++&#34;&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+#define int ll
+signed main()
+{
+	ios::sync_with_stdio(0);cin.tie(0);
+	int n;cin &amp;gt;&amp;gt; n;
+	map&amp;lt;int,int&amp;gt; tb;
+	int cnt8 = 0,cnt4 = 0,cnt2 = 0,cnt6 = 0;
+	for(int i = 1;i &amp;lt;= n;++i)
+	{
+		int x;cin &amp;gt;&amp;gt; x;
+		++tb[x];
+	}
+	for(auto&amp;amp; t : tb)
+	{
+		int cnt = t.second;
+		if(cnt &amp;gt;= 8)	++cnt8;
+		else if(cnt &amp;gt;= 6)	++cnt6;
+		else if(cnt &amp;gt;= 4)	++cnt4;
+		else if(cnt &amp;gt;= 2)	++cnt2;
+	}
+	int q;cin &amp;gt;&amp;gt; q;
+	while(q--)
+	{
+		char opt;int v;cin &amp;gt;&amp;gt; opt &amp;gt;&amp;gt; v;
+		if(opt == &#39;+&#39;)	
+		{
+			++tb[v];
+			int x = tb[v];
+			if(x == 2)	++cnt2;
+			if(x == 4)	--cnt2,++cnt4;
+			if(x == 6)	--cnt4,++cnt6;
+			if(x == 8)	--cnt6,++cnt8;	
+		}
+		else if(opt == &#39;-&#39;)
+		{
+			--tb[v];
+			int x = tb[v];
+			if(x == 7)	--cnt8,++cnt6;
+			if(x == 5)	--cnt6,++cnt4;
+			if(x == 3)	--cnt4,++cnt2;
+			if(x == 1)	--cnt2;
+		}
+		// cout &amp;lt;&amp;lt; cnt2 &amp;lt;&amp;lt; &amp;quot; &amp;quot; &amp;lt;&amp;lt; cnt4 &amp;lt;&amp;lt; &amp;quot; &amp;quot; &amp;lt;&amp;lt; cnt8 &amp;lt;&amp;lt; endl;
+		if(cnt8 &amp;gt;= 1 
+		|| (cnt4 &amp;gt;= 1 &amp;amp;&amp;amp; cnt2 &amp;gt;= 2) 
+		|| cnt4 &amp;gt;= 2 
+		|| (cnt6 &amp;gt;= 1 &amp;amp;&amp;amp; cnt2 &amp;gt;= 1)
+		|| cnt6 &amp;gt;= 2 
+		|| (cnt6 &amp;gt;= 1 &amp;amp;&amp;amp; cnt4 &amp;gt;= 1))
+			cout &amp;lt;&amp;lt; &amp;quot;YES\n&amp;quot;;
+		else cout &amp;lt;&amp;lt; &amp;quot;NO\n&amp;quot;;
+	}
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;c-pinkie-pie-eats-patty-cakes&#34;&gt;C. Pinkie Pie Eats Patty-cakes&lt;/h1&gt;
+&lt;p&gt;傻逼题面:给定一个长度为&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;n&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.43056em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;n&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;的序列.将其任意排列.定义整个序列里的距离是所有相邻元素之间的元素个数.问新排列中所有元素对里的最小距离的最大值是多少.&lt;br&gt;
+数据范围:&lt;br&gt;
+&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;msup&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;/msup&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;2 \leq n \leq 10^5&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.78041em;vertical-align:-0.13597em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;≤&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.7719400000000001em;vertical-align:-0.13597em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;≤&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.8141079999999999em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.8141079999999999em;&#34;&gt;&lt;span style=&#34;top:-3.063em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;5&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;
+&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;1 \leq a_i \leq n&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.78041em;vertical-align:-0.13597em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;≤&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.7859700000000001em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.31166399999999994em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mathdefault mtight&#34;&gt;i&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;≤&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.43056em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;n&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&#34;思路-3&#34;&gt;思路&lt;/h2&gt;
+&lt;p&gt;最小的最大值,显然是一个二分答案的框架.如果当前答案为&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;x&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.43056em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;x&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;且整个序列最后得到的排列里最小距离可以达到&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;x&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.43056em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;x&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;,则说明比&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;x&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.43056em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;x&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;小的答案都满足,比&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;x&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.43056em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;x&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;都大的不一定满足,故左指针向前,反之右指针向左.考虑&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;check(x)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;h&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.03148em;&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;怎么写:显然整个序列距离要拉到最大是和最多的元素有关的,因此可以优先处理数量最多的元素,把他们先排成一行,对于其他的元素,就相当于是往每两个最多的元素之间插入.这个做法就是让最多的元素之间的距离作为答案,如果其他元素可以全放进去,就说明正确,如果不可以,就说明做不到.如果元素不放在两个之间,而是放在其他地方,比如边界的左边,那么就会导致两个最多的元素之间的距离缩小,使答案变坏.所以应该只往最大元素中间放,显然如果最多的元素有&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;m&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.43056em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;m&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;个则会产生&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;m-1&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.66666em;vertical-align:-0.08333em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;−&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.64444em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;个缝隙,每个缝隙的距离就是当前二分要检查的距离,容易想到条件就是看整个序列够不够用,即&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;mo&gt;∗&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;(m-1)*x + 1 \leq n&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;−&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;∗&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.66666em;vertical-align:-0.08333em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.78041em;vertical-align:-0.13597em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;≤&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.43056em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;n&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;.如果最多的元素的种类不止一种,显然可以把他们也算进开始划分的边界的元素里去,即把他们当做一个整体考虑,最后的条件就是&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;mo&gt;∗&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;(m-1)*x + cnt \leq n&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;−&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;∗&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.66666em;vertical-align:-0.08333em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.7719400000000001em;vertical-align:-0.13597em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;≤&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.43056em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;n&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;,其中&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;cnt&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.61508em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;t&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;是个数最多的元素的种类数.&lt;/p&gt;
+&lt;h2 id=&#34;代码-3&#34;&gt;代码&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-C++&#34;&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+bool check(int dist,int m,int cnt,int up)
+{
+	if((ll)dist * (m - 1) + cnt &amp;lt;= up)	return 1;
+	return 0;
+}
+int main()
+{
+    int T;scanf(&amp;quot;%d&amp;quot;,&amp;amp;T);
+    while(T--)
+    {
+		map&amp;lt;int,int&amp;gt; tb;
+		int n;scanf(&amp;quot;%d&amp;quot;,&amp;amp;n);
+		for(int i = 1;i &amp;lt;= n;++i)
+		{
+			int x;scanf(&amp;quot;%d&amp;quot;,&amp;amp;x);
+			++tb[x];
+		}
+		if(tb.size() == 1)	printf(&amp;quot;0\n&amp;quot;);
+		else
+		{
+			int m = 0;
+			for(auto&amp;amp; t : tb)
+				m = max(m,t.second);
+			int cnt = 0;
+			for(auto&amp;amp; t : tb)
+				if(m == t.second)
+					++cnt;
+			int l = cnt,r = n;
+			while(l &amp;lt; r)
+			{
+				int mid = l + r + 1 &amp;gt;&amp;gt; 1;
+				if(check(mid,m,cnt,n))	l = mid;
+				else r = mid - 1;
+			}
+			printf(&amp;quot;%d\n&amp;quot;,l - 1);
+		}
+    }
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;d-rarity-and-new-dress&#34;&gt;D. Rarity and New Dress&lt;/h1&gt;
+&lt;p&gt;傻逼题面:在一个矩阵里找出元素都相同的45°旋转的正方形.&lt;br&gt;
+数据范围:&lt;br&gt;
+&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mn&gt;2000&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;1 \leq n,m \leq 2000&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.78041em;vertical-align:-0.13597em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;≤&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.8304100000000001em;vertical-align:-0.19444em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;≤&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.64444em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&#34;思路-4&#34;&gt;思路&lt;/h2&gt;
+&lt;p&gt;对于旋转后的图案,可以大概的看成是由两个框子组成的(即把整个菱形二染色,就可以画成一个有中心块的正方形的框架和一个没有的),所以答案就是这样的两个框子组合在一起,就是整个都相同的45°正方形.这一点可以dp来做,即把每个元素都看作是一个菱形的最下方的元素,从左上右上和上两格的地方下拓展而来.最终统计答案即可.&lt;/p&gt;
+&lt;h2 id=&#34;代码-4&#34;&gt;代码&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-C++&#34;&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+const int N = 2005;
+char g[N][N];
+ll f[N][N];
+int main()
+{
+    int n,m;scanf(&amp;quot;%d%d&amp;quot;,&amp;amp;n,&amp;amp;m);
+    for(int i = 1;i &amp;lt;= n;++i)	
+    {
+    	scanf(&amp;quot;%s&amp;quot;,g[i] + 1);getchar();
+    }
+  	for(int i = 1;i &amp;lt;= n;++i)
+  	{
+  		for(int j = 1;j &amp;lt;= m;++j)
+  		{
+  			if(i == 1)	f[i][j] = 1;
+  			else if(g[i][j] != g[i - 1][j - 1] 
+  			|| g[i][j] != g[i - 1][j + 1] 
+  			|| g[i][j] != g[i - 2][j])
+  				f[i][j] = 1ll;
+  			else	f[i][j] = min({f[i - 1][j - 1],
+  								   f[i - 1][j + 1],
+  								   f[i - 2][j]}) + 1;
+  		}
+  	}
+  	ll res = 0;
+  	for(int i = 1;i &amp;lt;= n;++i)
+  	{
+  		for(int j = 1;j &amp;lt;= m;++j)
+  		{
+  			if(g[i][j] == g[i - 1][j])
+  				res += min(f[i][j],f[i - 1][j] + 1);
+  			else ++ res;	
+  		}
+  	}
+  	printf(&amp;quot;%lld&amp;quot;,res);
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+">Codeforces Round #662 Div2 A~D题解</a>
+      </div>
+      
+      <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://Dreamfarer.github.io/post/rqITkKP2C/"" data-c="
           &lt;p&gt;本场链接:&lt;a href=&#34;https://codeforces.ml/contest/1204&#34;&gt;Codeforces Round #581 Div2&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&#34;闲话&#34;&gt;闲话&lt;/h1&gt;
@@ -1008,7 +1206,7 @@ int main()
     return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
-">Codeforces Round #581 Div2 题解</a>
+">Codeforces Round #581 Div2 A~D题解</a>
       </div>
       
       <div class="item">
